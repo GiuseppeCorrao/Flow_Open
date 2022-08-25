@@ -1,5 +1,6 @@
 package products.device;
 
+import products.Brand;
 import products.components.Components;
 import products.components.Processor;
 import products.components.StorageSpace;
@@ -13,13 +14,12 @@ public class Console extends Device {
     String game;
 
 
-    public Console(OperatingSystem system, Processor processor, StorageSpace storage, Components[] components, int numberOfController,
-                   boolean haveAGame, String game) {
-        super(system, processor, storage);
+    public Console(Brand brand, String model, String color, double price, OperatingSystem system, Processor processor, StorageSpace storage, Components[] components, int numberOfController, boolean haveAGame, String game) {
+        super(brand, model, color, price, system, processor, storage);
         this.components = components;
         this.numberOfController = numberOfController;
         this.haveAGame = haveAGame;
         this.game = game;
-
     }
 }
+

@@ -1,5 +1,8 @@
 package products.software;
 
+import products.Brand;
+import products.Product;
+
 public class Software {
 
     String name;
@@ -8,7 +11,7 @@ public class Software {
     double price;
     String typeOfBit;
 
-    public Software(String name, String description, String version, double price, String typeOfBit){
+    public Software(String name, String description, String version, double price, String typeOfBit) {
         this.name = name;
         this.description = description;
         this.version = version;
@@ -16,3 +19,5 @@ public class Software {
         this.typeOfBit = typeOfBit;
     }
 }
+
+
