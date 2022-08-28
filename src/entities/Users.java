@@ -1,5 +1,6 @@
 package entities;
 
+import lombok.Builder;
 import motherclass.FlowOpen;
 import products.Brand;
 

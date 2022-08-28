@@ -1,7 +1,11 @@
 package businesslogic;
 
+import lombok.Getter;
+import lombok.Setter;
 import motherclass.FlowOpen;
 import products.Brand;
+@Getter
+@Setter
 
 public class BusinessLogic extends FlowOpen {
 
@@ -9,8 +13,13 @@ public class BusinessLogic extends FlowOpen {
         super(name, description, contact, address, brand);
     }
 
-    void calculateIva(){};
-    void calculatePassive(){};
-    void calculateActive(){};
+    double calculateIva(){
+        int iva = 22;
+        double price = 0;
+        double calcIva = (price*iva)/100;
+        return calcIva;
+    }
+    void calculatePassive(){}
+    void calculateActive(){}
 
 }
