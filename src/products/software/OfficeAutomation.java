@@ -2,12 +2,12 @@ package products.software;
 
 public class OfficeAutomation extends Software{
 
-    OperatingSystem oS;
-    boolean wordProcessor;
-    boolean spreadSheets;
-    boolean database;
-    boolean graphicSoftware;
-    boolean email;
+    private OperatingSystem oS;
+    private boolean wordProcessor;
+    private boolean spreadSheets;
+    private boolean database;
+    private boolean graphicSoftware;
+    private boolean email;
 
 
     public OfficeAutomation(String name, String description, String version, double price, String typeOfBit, OperatingSystem os,

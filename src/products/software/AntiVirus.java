@@ -2,10 +2,10 @@ package products.software;
 
 public class AntiVirus extends  Software{
 
-    boolean liveScanner;
-    boolean planificatedScansions;
-    boolean adsBlock;
-    boolean clean;
+    private boolean liveScanner;
+    private boolean planificatedScansions;
+    private boolean adsBlock;
+    private boolean clean;
 
 
     public AntiVirus(String name, String description, String version, double price, String typeOfBit, boolean liveScanner,

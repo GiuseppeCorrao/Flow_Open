@@ -2,8 +2,8 @@ package products.components;
 
 public class Components {
 
-    double price;
-    int availability;
+    private double price;
+    private int availability;
 
     public Components(double price, int availability) {
         this.price = price;
