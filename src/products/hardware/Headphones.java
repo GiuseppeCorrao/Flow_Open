@@ -4,10 +4,10 @@ import products.Brand;
 
 public class Headphones extends Hardware {
 
-    int decibel;
+    private int decibel;
 
-    public Headphones(Brand brand, String model, String color, double price, boolean ifAreUsb, String colorOfLed, int decibel) {
-        super(brand, model, color, price, ifAreUsb, colorOfLed);
+    public Headphones(Brand brand, String model, String color, double price, String description, boolean ifAreUsb, String colorOfLed, int decibel) {
+        super(brand, model, color, price, description, ifAreUsb, colorOfLed);
         this.decibel = decibel;
     }
 }

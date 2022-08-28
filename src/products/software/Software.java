@@ -2,11 +2,11 @@ package products.software;
 
 public class Software {
 
-    String name;
-    String description;
-    String version;
-    double price;
-    String typeOfBit;
+    private String name;
+    private String description;
+    private String version;
+    private double price;
+    private String typeOfBit;
 
     public Software(String name, String description, String version, double price, String typeOfBit){
         this.name = name;

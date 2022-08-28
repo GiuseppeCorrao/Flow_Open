@@ -2,8 +2,8 @@ package products.components;
 
 public class StorageSpace extends Components {
 
-    double GBStorage;
-    String RAM;
+    private double GBStorage;
+    private String RAM;
 
 
     public StorageSpace(double price, int availability, double GBStorage, String RAM) {
