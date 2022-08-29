@@ -29,13 +29,16 @@ public class Product {
      * "200 OK" means that the purchase was successful
      * "204 No Content" means that the purchase has been canceled
      */
-    private void buy() {
+    public String buy() {
         Scanner scan = new Scanner(System.in);
         String input = scan.nextLine();
         System.out.println("Do you want to confirm the purchase?[Y/n]");
-        if (input.equalsIgnoreCase("y")) System.out.println("200 OK");
-        else if (input.equalsIgnoreCase("n")) System.out.println("204 No Content");
-        else System.out.println("add to chart");
+        if (input.equalsIgnoreCase("y"))
+            return "200 OK";
+        else if (input.equalsIgnoreCase("n"))
+            return "204 No Content";
+        else
+            return "add to chart";
 
     }
 
