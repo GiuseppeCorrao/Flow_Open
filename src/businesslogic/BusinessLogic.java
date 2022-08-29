@@ -12,8 +12,7 @@ public class BusinessLogic extends FlowOpen {
     public double calculateIva(){
         int iva = 22;
         double price = 0;
-        double calcIva = (price*iva)/100;
-        return calcIva;
+       return (price*iva)/100;
     }
     void calculatePassive(){}
     void calculateActive(){}
