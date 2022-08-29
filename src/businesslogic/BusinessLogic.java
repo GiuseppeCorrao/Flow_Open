@@ -9,8 +9,13 @@ public class BusinessLogic extends FlowOpen {
         super(name, description, contact, address, brand);
     }
 
-    void calculateIva(){};
-    void calculatePassive(){};
-    void calculateActive(){};
+    public double calculateIva(){
+        int iva = 22;
+        double price = 0;
+        double calcIva = (price*iva)/100;
+        return calcIva;
+    }
+    void calculatePassive(){}
+    void calculateActive(){}
 
 }
