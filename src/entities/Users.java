@@ -15,9 +15,9 @@ public class Users extends FlowOpen {
     String sex;
     String email;
     String password;
-    List<Object> chart;
 
-    public Users(String name, String description, String[] contact, String address, Brand brand, String nameUser, String surnameUser, int age, LocalDate birthday, String sex, String email, String password, List<Object> chart) {
+
+    public Users(String name, String description, String[] contact, String address, Brand brand, String nameUser, String surnameUser, int age, LocalDate birthday, String sex, String email, String password) {
         super(name, description, contact, address, brand);
         this.nameUser = nameUser;
         this.surnameUser = surnameUser;
@@ -26,13 +26,28 @@ public class Users extends FlowOpen {
         this.sex = sex;
         this.email = email;
         this.password = password;
-        this.chart = chart;
+
     }
 
-    void signIn(){};
-    void login(){};
-    void totalPrice(){};
-    void sum(){};
+    void signIn() {
+    }
+
+    ;
+
+    void login() {
+    }
+
+    ;
+
+    void totalPrice() {
+    }
+
+    ;
+
+    void sum() {
+    }
+
+    ;
 
 
 }
