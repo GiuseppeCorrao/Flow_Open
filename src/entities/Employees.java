@@ -4,7 +4,7 @@ import motherclass.FlowOpen;
 import products.Brand;
 import workinglogic.WorkingDays;
 
-public class Employees extends FlowOpen {
+public class Employees {
 
     String nameEmployee;
     String surnameEmployee;
@@ -12,7 +12,6 @@ public class Employees extends FlowOpen {
 
     public Employees(String name, String description, String[] contact, String address, Brand brand, String nameEmployee,
                      String surname, WorkingDays workingDays) {
-        super(name, description, contact, address, brand);
         this.nameEmployee = nameEmployee;
         this.surnameEmployee = surnameEmployee;
         this.workingDays = workingDays;
