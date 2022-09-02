@@ -6,8 +6,13 @@ import products.Product;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
-public class ProductTest {
+public class CartTest {
 
+    /**
+     * @author Samuele Catalano
+     * The method needs to be implemented
+     */
+    /*
     @Test
     void buyTest() {
         Product product = new Product(Brand.ACER,"TravelMate P2","Black",329.00,"This PC works");
@@ -15,5 +20,5 @@ public class ProductTest {
         InputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
         Assertions.assertEquals("200 OK", product.buy());
-    }
+    }*/
 }
