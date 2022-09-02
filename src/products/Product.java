@@ -1,10 +1,12 @@
 package products;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.util.Scanner;
-
 public class Product {
+
+    /**
+     * @author Giuseppe Corrao
+     * @version 2.0
+     * this class has been refactor + add getter and setter
+     */
 
     private Brand brand;
     private String model;
@@ -12,26 +14,65 @@ public class Product {
     private double price;
     private String description;
 
+    private String product;
 
-    public Product(Brand brand, String model, String color, double price, String description) {
+
+    public Product(Brand brand, String model, String color, double price, String description,String product) {
         this.brand = brand;
         this.model = model;
         this.color = color;
         this.price = price;
         this.description = description;
+        this.product = product;
 
 
     }
 
-    public String buy() {
-        Scanner scan = new Scanner(System.in);
-        String input = scan.nextLine();
-        System.out.println("Do you want to confirm the purchase?[Y/n]");
-        if (input.equalsIgnoreCase("y"))
-            return "200 OK";
-        else if (input.equalsIgnoreCase("n"))
-            return "204 No Content";
-        else
-            return "add to chart";
+    public Brand getBrand() {
+        return brand;
+    }
+
+    public void setBrand(Brand brand) {
+        this.brand = brand;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getProduct() {
+        return product;
+    }
+
+    public void setProduct(String product) {
+        this.product = product;
     }
 }

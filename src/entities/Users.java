@@ -1,12 +1,9 @@
 package entities;
 
-import motherclass.FlowOpen;
-import products.Brand;
-
 import java.time.LocalDate;
 import java.util.List;
 
-public class Users extends FlowOpen {
+public class Users{
 
     String nameUser;
     String surnameUser;
@@ -17,8 +14,7 @@ public class Users extends FlowOpen {
     String password;
 
 
-    public Users(String name, String description, String[] contact, String address, Brand brand, String nameUser, String surnameUser, int age, LocalDate birthday, String sex, String email, String password) {
-        super(name, description, contact, address, brand);
+    public Users(String nameUser, String surnameUser, int age, LocalDate birthday, String sex, String email, String password) {
         this.nameUser = nameUser;
         this.surnameUser = surnameUser;
         this.age = age;
