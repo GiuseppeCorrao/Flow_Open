@@ -13,7 +13,7 @@ public class SubscriptionPlans extends Users {
     SubscriptionPlans (){}
 
     public SubscriptionPlans(String name, String description, String[] contact, String address, Brand brand, String nameUser,
-                             String surnameUser, int age, LocalDate birthday, String sex, String email, String password, List<Object> chart) {
+                             String surnameUser, int age, LocalDate birthday, String sex, String email, String password) {
 
     }
 
