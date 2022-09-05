@@ -1,6 +1,8 @@
 package products;
 
-public class Product {
+import java.util.List;
+
+public class Product extends Cart{
 
     /**
      * @author Giuseppe Corrao
@@ -17,15 +19,13 @@ public class Product {
     private String product;
 
 
-    public Product(Brand brand, String model, String color, double price, String description,String product) {
+    public Product(Brand brand, String model, String color, double price, String description, String product) {
         this.brand = brand;
         this.model = model;
         this.color = color;
         this.price = price;
         this.description = description;
         this.product = product;
-
-
     }
 
     public Brand getBrand() {
