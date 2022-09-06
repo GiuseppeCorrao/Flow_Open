@@ -10,7 +10,6 @@ public class Cart {
 
     public Cart(List<Product> productsOnCart) {
         this.productsOnCart = productsOnCart;
-
     }
 
     public String buy() {
@@ -22,23 +21,19 @@ public class Cart {
         else if (input.equalsIgnoreCase("n"))
             return "204 No Content";
         else
-            return "add to chart";
+            return "add to cart";
     }
 
-    public List<Product> addedOnCart(Product p) {
+    public void addedOnCart(Product p) {
 
         productsOnCart.add(p);
-        return productsOnCart;
+
     }
 
-    /**
-     * @author Samuele Catalano
-     * This method needs to be fixed
-     */
-    /*
-    private double totalPrice(Product product) {
-        productsOnCart.size();
-        System.out.println("The total price of your products in the cart is ");
-        return ;
-    }*/
+
+    public void totalPrice(List<Product> p) {
+        for (int i = 0; i < productsOnCart.size(); i++) {
+            p.get(i).getPrice();
+        }
+    }
 }

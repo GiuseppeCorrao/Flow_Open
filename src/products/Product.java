@@ -2,7 +2,7 @@ package products;
 
 import java.util.List;
 
-public class Product extends Cart{
+public class Product extends Cart {
 
     /**
      * @author Giuseppe Corrao
@@ -19,7 +19,8 @@ public class Product extends Cart{
     private String product;
 
 
-    public Product(Brand brand, String model, String color, double price, String description, String product) {
+    public Product(List<Product> productsOnCart, Brand brand, String model, String color, double price, String description, String product) {
+        super(productsOnCart);
         this.brand = brand;
         this.model = model;
         this.color = color;
@@ -27,6 +28,7 @@ public class Product extends Cart{
         this.description = description;
         this.product = product;
     }
+
 
     public Brand getBrand() {
         return brand;
