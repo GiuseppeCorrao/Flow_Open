@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import products.Brand;
+import products.Cart;
 import products.Product;
 
 import java.io.ByteArrayInputStream;
@@ -62,4 +63,5 @@ public class CartTest {
         double sum = tv.getPrice() + smartphone.getPrice();
         Assertions.assertEquals(6, sum);
     }
+
 }

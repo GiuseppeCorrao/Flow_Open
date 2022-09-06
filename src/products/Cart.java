@@ -32,8 +32,11 @@ public class Cart {
 
 
     public void totalPrice(List<Product> p) {
+
         for (int i = 0; i < productsOnCart.size(); i++) {
-            p.get(i).getPrice();
+            double sum = p.get(i).getPrice() + p.get(i).getPrice();
         }
+
+
     }
 }
