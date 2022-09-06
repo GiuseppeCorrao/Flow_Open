@@ -2,7 +2,7 @@ package products;
 
 
 import java.util.List;
-import java.util.Scanner;
+
 
 public class Cart {
 
@@ -12,31 +12,33 @@ public class Cart {
         this.productsOnCart = productsOnCart;
     }
 
-    public String buy() {
-        Scanner scan = new Scanner(System.in);
-        String input = scan.nextLine();
-        System.out.println("Do you want to confirm the purchase?[Y/n]");
-        if (input.equalsIgnoreCase("y"))
-            return "200 OK";
-        else if (input.equalsIgnoreCase("n"))
-            return "204 No Content";
-        else
-            return "add to cart";
+    public int buy(Product p) {
+        p.setQuantity(-1);
+        return p.getQuantity();
     }
 
-    public void addedOnCart(Product p) {
+    public int abort(Product p) {
+        p.setQuantity(+1);
+        return p.getQuantity();
+    }
+
+
+    public List<Product> addedOnCart(Product p) {
 
         productsOnCart.add(p);
+        return productsOnCart;
 
     }
 
 
-    public void totalPrice(List<Product> p) {
+    public double totalPrice(Product p, Product p1) {
 
-        for (int i = 0; i < productsOnCart.size(); i++) {
-            double sum = p.get(i).getPrice() + p.get(i).getPrice();
-        }
+        double sum = p.getPrice() + p1.getPrice();
+
+        return sum;
 
 
     }
+
+
 }
