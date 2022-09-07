@@ -17,6 +17,12 @@ public class Cart {
         return p.getQuantity();
     }
 
+    /**
+     * @author Samuele Catalano
+     * This method adds a quantity to the product when you cancel the purchase
+     * @param p of Product
+     * @return p.getQuantity()
+     */
     public int abort(Product p) {
         p.setQuantity(+1);
         return p.getQuantity();

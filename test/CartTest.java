@@ -44,7 +44,7 @@ public class CartTest {
         Product tv = new Product(productList, Brand.LG, "SJDJDJJSD", "CKDSKSKKS", 3.0, "SKSKK", "TV", 34);
         productList.add(smartphone);
         productList.add(tv);
-        Assertions.assertEquals(6.0,smartphone.totalPrice(smartphone,tv));
+        Assertions.assertEquals(6.0, smartphone.totalPrice(smartphone, tv));
     }
 
 
