@@ -13,7 +13,6 @@ public class Users{
     String email;
     String password;
 
-
     public Users(String nameUser, String surnameUser, int age, LocalDate birthday, String sex, String email, String password) {
         this.nameUser = nameUser;
         this.surnameUser = surnameUser;
@@ -24,26 +23,4 @@ public class Users{
         this.password = password;
 
     }
-
-    void signIn() {
-    }
-
-    ;
-
-    void login() {
-    }
-
-    ;
-
-    void totalPrice() {
-    }
-
-    ;
-
-    void sum() {
-    }
-
-    ;
-
-
 }
