@@ -12,8 +12,8 @@ public class CartTest {
      * @author Samuele Catalano
      * The method needs to be implemented
      */
-    /*
-    @Test
+
+    /*@Test
     void buyTest() {
         Product product = new Product(Brand.ACER,"TravelMate P2","Black",329.00,"This PC works");
         String input = "y";
