@@ -1,5 +1,7 @@
 package products;
 
+import java.util.List;
+
 public class Product {
 
     /**
@@ -15,18 +17,27 @@ public class Product {
     private String description;
 
     private String product;
+    public int quantity;
 
 
-    public Product(Brand brand, String model, String color, double price, String description,String product) {
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public Product(List<Product> productsOnCart, Brand brand, String model, String color, double price, String description, String product, int quantity) {
         this.brand = brand;
         this.model = model;
         this.color = color;
         this.price = price;
         this.description = description;
         this.product = product;
-
-
+        this.quantity = quantity;
     }
+
 
     public Brand getBrand() {
         return brand;

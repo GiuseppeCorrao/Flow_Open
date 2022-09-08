@@ -1,4 +1,4 @@
-package entities;
+package motherclass.entities;
 
 import workinglogic.WorkingDays;
 
