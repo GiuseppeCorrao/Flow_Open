@@ -1,9 +1,8 @@
 package entities;
 
 import java.time.LocalDate;
-import java.util.List;
 
-public class Users{
+public class User{
 
     String nameUser;
     String surnameUser;
@@ -13,8 +12,13 @@ public class Users{
     String email;
     String password;
 
+    public User(String email,String password){
+        this.email = email;
+        this.password = password;
 
-    public Users(String nameUser, String surnameUser, int age, LocalDate birthday, String sex, String email, String password) {
+    }
+
+    public User(String nameUser, String surnameUser, int age, LocalDate birthday, String sex, String email, String password) {
         this.nameUser = nameUser;
         this.surnameUser = surnameUser;
         this.age = age;
@@ -24,26 +28,4 @@ public class Users{
         this.password = password;
 
     }
-
-    void signIn() {
-    }
-
-    ;
-
-    void login() {
-    }
-
-    ;
-
-    void totalPrice() {
-    }
-
-    ;
-
-    void sum() {
-    }
-
-    ;
-
-
 }

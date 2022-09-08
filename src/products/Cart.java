@@ -12,6 +12,7 @@ public class Cart {
         this.productsOnCart = productsOnCart;
     }
 
+
     public int buy(Product p) {
         p.setQuantity(-1);
         return p.getQuantity();
@@ -24,7 +25,7 @@ public class Cart {
      * @return p.getQuantity()
      */
     public int abort(Product p) {
-        p.setQuantity(+1);
+
         return p.getQuantity();
     }
 

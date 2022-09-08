@@ -11,8 +11,17 @@ import java.util.List;
 
 public class CartTest {
 
+<<<<<<< HEAD
 
     @Test
+=======
+    /**
+     * @author Samuele Catalano
+     * The method needs to be implemented
+     */
+
+    /*@Test
+>>>>>>> 06c1e8f26362b15f5cfee02623d064874dc7ee14
     void buyTest() {
         List<Product> productList = new ArrayList<>();
         Product product = new Product(productList, Brand.ACER, "TravelMate P2", "Black", 329.00, "This PC works", "pc", 4);
