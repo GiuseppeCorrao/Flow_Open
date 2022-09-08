@@ -1,6 +1,5 @@
 package products;
 
-import motherclass.FlowOpen;
 
 import java.util.List;
 
