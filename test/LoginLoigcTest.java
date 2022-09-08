@@ -26,4 +26,19 @@ public class LoginLoigcTest {
 
         Assertions.assertEquals(loginreturn,loginLogic.login(email,password));
     }
+    @Test
+    void LoginTestWrong(){
+        String email = "jojo@lol.com";
+        String password = "Test";
+
+        String email2 = "buhu@lol.com";
+        String password2 = "Test2";
+
+        String loginreturn = "password and email are wrong";
+        LoginLogic loginLogic = new LoginLogic();
+
+        loginLogic.registered(email,password);
+
+        Assertions.assertEquals(loginreturn,loginLogic.login(email2,password2));
+    }
 }
