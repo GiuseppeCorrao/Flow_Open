@@ -9,10 +9,4 @@ public class BusinessLogic {
         return (price * iva) / 100;
     }
 
-    void calculatePassive() {
-    }
-
-    void calculateActive() {
-    }
-
 }
