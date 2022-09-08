@@ -1,4 +1,4 @@
-import entities.LoginLogic;
+import motherclass.entities.LoginLogic;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
