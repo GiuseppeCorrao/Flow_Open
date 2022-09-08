@@ -2,7 +2,7 @@ package products;
 
 import java.util.List;
 
-public class Product extends Cart {
+public class Product {
 
     /**
      * @author Giuseppe Corrao
@@ -20,16 +20,7 @@ public class Product extends Cart {
     public int quantity;
 
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
     public Product(List<Product> productsOnCart, Brand brand, String model, String color, double price, String description, String product, int quantity) {
-        super(productsOnCart);
         this.brand = brand;
         this.model = model;
         this.color = color;
@@ -86,5 +77,13 @@ public class Product extends Cart {
 
     public void setProduct(String product) {
         this.product = product;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public int getQuantity() {
+        return quantity;
     }
 }

@@ -30,10 +30,10 @@ public class Cart {
     }
 
 
-    public List<Product> addedOnCart(Product p) {
+    public boolean addedOnCart(Product p) {
 
         productsOnCart.add(p);
-        return productsOnCart;
+        return true;
 
     }
 
