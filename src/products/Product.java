@@ -1,6 +1,6 @@
 package products;
 
-import java.util.List;
+
 
 public class Product {
 
@@ -17,10 +17,10 @@ public class Product {
     private String description;
 
     private String product;
-    public int quantity;
+    private int quantity;
 
 
-    public Product(List<Product> productsOnCart, Brand brand, String model, String color, double price, String description, String product, int quantity) {
+    public Product(Brand brand, String model, String color, double price, String description, String product, int quantity) {
         this.brand = brand;
         this.model = model;
         this.color = color;
@@ -79,6 +79,7 @@ public class Product {
         this.product = product;
     }
 
+
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
@@ -86,4 +87,24 @@ public class Product {
     public int getQuantity() {
         return quantity;
     }
-}
+
+        /**
+         * @author Giuseppe Corrao
+         * temporary method for print product
+         */
+        @Override
+        public String toString () {
+            return "Product{" +
+                    "brand=" + brand +
+                    ", model='" + model + '\'' +
+                    ", color='" + color + '\'' +
+                    ", price=" + price +
+                    ", description='" + description + '\'' +
+                    ", product='" + product + '\'' +
+                    ", quantity=" + quantity +
+                    '}';
+
+        }
+    }
+
+

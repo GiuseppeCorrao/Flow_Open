@@ -1,16 +1,18 @@
 package products;
 
-
-import java.util.List;
-
+import java.util.HashMap;
 public class Inventory {
+    HashMap productHashMap;
 
-    List<Product> products;
-    int quantityProducts;
+    public Inventory() {
+        this.productHashMap = new HashMap<>();
+    }
 
-    public Inventory(List<Product> products,int quantityProducts) {
+    public HashMap getProductHashMap() {
+        return productHashMap;
+    }
 
-        this.products = products;
-        this.quantityProducts = quantityProducts;
+    public void setProductHashMap(HashMap productHashMap) {
+        this.productHashMap = productHashMap;
     }
 }
