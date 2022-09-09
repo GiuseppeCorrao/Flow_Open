@@ -28,7 +28,7 @@ public class Product {
         return quantity;
     }
 
-    public Product(List<Product> productsOnCart, Brand brand, String model, String color, double price, String description, String product, int quantity) {
+    public Product(Brand brand, String model, String color, double price, String description, String product, int quantity) {
         this.brand = brand;
         this.model = model;
         this.color = color;
@@ -85,5 +85,22 @@ public class Product {
 
     public void setProduct(String product) {
         this.product = product;
+    }
+
+    /**
+     * @author Giuseppe Corrao
+     * temporary method for print product
+     */
+    @Override
+    public String toString() {
+        return "Product{" +
+                "brand=" + brand +
+                ", model='" + model + '\'' +
+                ", color='" + color + '\'' +
+                ", price=" + price +
+                ", description='" + description + '\'' +
+                ", product='" + product + '\'' +
+                ", quantity=" + quantity +
+                '}';
     }
 }
