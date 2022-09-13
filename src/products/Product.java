@@ -1,7 +1,6 @@
 package products;
 
 
-
 public class Product {
 
     /**
@@ -88,23 +87,23 @@ public class Product {
         return quantity;
     }
 
-        /**
-         * @author Giuseppe Corrao
-         * temporary method for print product
-         */
-        @Override
-        public String toString () {
-            return "Product{" +
-                    "brand=" + brand +
-                    ", model='" + model + '\'' +
-                    ", color='" + color + '\'' +
-                    ", price=" + price +
-                    ", description='" + description + '\'' +
-                    ", product='" + product + '\'' +
-                    ", quantity=" + quantity +
-                    '}';
+    /**
+     * @author Giuseppe Corrao
+     * temporary method for print product
+     */
+    @Override
+    public String toString() {
+        return "Product{" +
+                "brand=" + brand +
+                ", model='" + model + '\'' +
+                ", color='" + color + '\'' +
+                ", price=" + price +
+                ", description='" + description + '\'' +
+                ", product='" + product + '\'' +
+                ", quantity=" + quantity +
+                '}';
 
-        }
     }
+}
 
 

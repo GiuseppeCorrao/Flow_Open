@@ -1,6 +1,7 @@
 package products;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -8,44 +9,71 @@ public class Cart {
 
     List<Product> productsOnCart;
 
-    public Cart(List<Product> productsOnCart) {
-        this.productsOnCart = productsOnCart;
+
+    public Cart() {
+        this.productsOnCart = new ArrayList<Product>();
+
     }
 
 
-    public int buy(Product p) {
-        p.setQuantity(-1);
-        return p.getQuantity();
+    public boolean buy(Product p) {
+        productsOnCart.add(p);
+        for (int i = 0; i < productsOnCart.size(); i++) {
+            productsOnCart.remove(i);
+        }
+        return productsOnCart.isEmpty();
+
+
+        //insert http request
     }
+
 
     /**
      * @author Samuele Catalano
      * This method adds a quantity to the product when you cancel the purchase
-     * @param p of Product
-     * @return p.getQuantity()
      */
-    public int abort(Product p) {
+    public void abort() {
+        for (int i = 0; i < productsOnCart.size(); i++) {
+            productsOnCart.remove(i);
+        }
 
-        return p.getQuantity();
     }
 
 
-    public boolean addedOnCart(Product p) {
+    public boolean addOnCart(Product p) {
 
         productsOnCart.add(p);
-        return true;
 
+        return productsOnCart.isEmpty();
     }
 
 
-    public double totalPrice(Product p, Product p1) {
+    public double totalPrice() {
+        double sum = 0;
+        for (int i = 0; i < productsOnCart.size(); i++) {
 
-        double sum = p.getPrice() + p1.getPrice();
+            sum += productsOnCart.get(i).getPrice();
 
+        }
         return sum;
-
-
     }
 
+    /**
+     * This method determines when the client pay the delivery and when he doesn't
+     * @author Samuele Catalano
+     */
+    public double priceDelivery() {
+        double priceDelivery = 15;
+        for (int i = 0; i < productsOnCart.size(); i++) {
+            if (productsOnCart.get(i).getPrice() > 20) {
+                priceDelivery = productsOnCart.get(i).getPrice();
+                System.out.println("The total price is " + priceDelivery);
+            } else {
+                priceDelivery += productsOnCart.get(i).getPrice();
+                System.out.println("The total price is " + priceDelivery);
+            }
+        }
+        return priceDelivery;
 
+    }
 }
