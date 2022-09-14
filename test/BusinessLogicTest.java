@@ -8,4 +8,9 @@ public class BusinessLogicTest {
     void calculateIvaTest() {
         Assertions.assertEquals(73.26, BusinessLogic.calculateIva(333));
     }
+
+    @Test
+    void calculateDiscountTest(){
+        Assertions.assertEquals(365.0, BusinessLogic.getCalculateDiscount(500,27));
+    }
 }
