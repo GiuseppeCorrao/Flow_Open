@@ -1,6 +1,12 @@
 import businesslogic.BusinessLogic;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import products.Brand;
+import products.Product;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class BusinessLogicTest {
 
@@ -11,6 +17,8 @@ public class BusinessLogicTest {
 
     @Test
     void calculateDiscountTest(){
-        Assertions.assertEquals(365.0, BusinessLogic.getCalculateDiscount(500,27));
+        BusinessLogic product= new BusinessLogic();
+        Product product1= new Product(Brand.APPLE, "4x4", "rosso", 135.00, "è un pc molto veloce, potente", "computer", 50);
+        Assertions.assertEquals(103.95, product.getCalculateDiscount(product1));
     }
 }

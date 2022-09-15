@@ -1,6 +1,8 @@
 package businesslogic;
 
 
+import products.Product;
+
 public class BusinessLogic {
 
     public static double calculateIva(double price) {
@@ -8,9 +10,10 @@ public class BusinessLogic {
         return (price * iva) / 100;
     }
 
-    public static double getCalculateDiscount(double newPrice, int sconto){
-        double out= (newPrice * sconto)/100;
-        out= newPrice - out;
-        return out;
+    public double getCalculateDiscount(Product product){
+        int discountPercentage= 23;
+        double priceDiscount= (discountPercentage * product.getPrice())/100;
+        priceDiscount= product.getPrice() - priceDiscount;
+        return priceDiscount;
     }
 }
