@@ -17,28 +17,24 @@ public class Cart {
 
 
     public void buy() {
-            productsOnCart.clear();
-        }  //insert http request
-
+        productsOnCart.clear();
+    }  //insert http request
 
 
     /**
      * @author Samuele Catalano
-     * @version 3.0
+     * @version 4.0
      * This method leaves the quantity of the products unchanged when you cancel the purchase
      */
     public void abort() {
-        for (int i = 0; i < productsOnCart.size(); i++) {
-            productsOnCart.remove(i);
-        }
 
+        productsOnCart.clear();
     }
 
 
     public void addOnCart(Product p) {
-            productsOnCart.add(p);
-        }
-
+        productsOnCart.add(p);
+    }
 
 
     public double totalPrice() {
