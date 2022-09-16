@@ -16,21 +16,16 @@ public class Cart {
     }
 
 
-    public boolean buy(Product p) {
-        productsOnCart.add(p);
-        for (int i = 0; i < productsOnCart.size(); i++) {
-            productsOnCart.remove(i);
-        }
-        return productsOnCart.isEmpty();
+    public void buy() {
+            productsOnCart.clear();
+        }  //insert http request
 
-
-        //insert http request
-    }
 
 
     /**
      * @author Samuele Catalano
-     * This method adds a quantity to the product when you cancel the purchase
+     * @version 3.0
+     * This method leaves the quantity of the products unchanged when you cancel the purchase
      */
     public void abort() {
         for (int i = 0; i < productsOnCart.size(); i++) {
@@ -40,12 +35,10 @@ public class Cart {
     }
 
 
-    public boolean addOnCart(Product p) {
+    public void addOnCart(Product p) {
+            productsOnCart.add(p);
+        }
 
-        productsOnCart.add(p);
-
-        return productsOnCart.isEmpty();
-    }
 
 
     public double totalPrice() {
@@ -60,20 +53,21 @@ public class Cart {
 
     /**
      * This method determines when the client pay the delivery and when he doesn't
+     *
+     * @version 2.0
      * @author Samuele Catalano
      */
     public double priceDelivery() {
         double priceDelivery = 15;
-        for (int i = 0; i < productsOnCart.size(); i++) {
-            if (productsOnCart.get(i).getPrice() > 20) {
-                priceDelivery = productsOnCart.get(i).getPrice();
-                System.out.println("The total price is " + priceDelivery);
-            } else {
-                priceDelivery += productsOnCart.get(i).getPrice();
-                System.out.println("The total price is " + priceDelivery);
-            }
+        if (totalPrice() > 100) {
+            System.out.println(priceDelivery = 0);
+        } else {
+            System.out.println(priceDelivery);
         }
         return priceDelivery;
+    }
 
+    public List<Product> getProductsOnCart() {
+        return productsOnCart;
     }
 }
