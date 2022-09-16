@@ -68,7 +68,7 @@ public class CartTest {
     }
 
     @Test
-    void priceDeliveryWithPriceOfProductSuperiorTo20() {
+    void priceDeliveryWithPriceOfProductSuperiorTo100() {
         Cart cart = new Cart();
         Product smartphone = new Product(Brand.ACER, "SJDJDJJSD", "CKDSKSKKS", 300.00, "SKSKK", "smartphone", 10);
 
@@ -79,7 +79,7 @@ public class CartTest {
     }
 
     @Test
-    void priceDeliveryWithPriceOfProductInferiorTo20() {
+    void priceDeliveryWithPriceOfProductInferiorTo100() {
         Cart cart = new Cart();
         Product raspberryPi4 = new Product(Brand.LG, "SJDJDJJSD", "CKDSKSKKS", 6.38, "SKSKK", "TV", 34);
 
