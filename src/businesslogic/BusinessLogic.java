@@ -11,10 +11,10 @@ public class BusinessLogic {
         return (price * iva) / 100;
     }
 
-    public double getCalculateDiscount(Product product){
-        int discountPercentage= 23;
-        double priceDiscount= (discountPercentage * product.getPrice())/100;
-        priceDiscount= product.getPrice() - priceDiscount;
+    public double getCalculateDiscount(Product product) {
+        int discountPercentage = 23;
+        double priceDiscount = (discountPercentage * product.getPrice()) / 100;
+        priceDiscount = product.getPrice() - priceDiscount;
         return priceDiscount;
     }
 

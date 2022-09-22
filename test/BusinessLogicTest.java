@@ -13,9 +13,9 @@ public class BusinessLogicTest {
 
 
     @Test
-    void calculateDiscountTest(){
-        BusinessLogic product= new BusinessLogic();
-        Product product1= new Product(Brand.APPLE, "4x4", "rosso", 135.00, "è un pc molto veloce, potente", "computer", 50);
+    void calculateDiscountTest() {
+        BusinessLogic product = new BusinessLogic();
+        Product product1 = new Product(Brand.APPLE, "4x4", "rosso", 135.00, "è un pc molto veloce, potente", "computer", 50);
         Assertions.assertEquals(103.95, product.getCalculateDiscount(product1));
     }
 }
