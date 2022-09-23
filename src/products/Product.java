@@ -10,23 +10,23 @@ public class Product {
      */
 
     private Brand brand;
-    private String model;
     private String color;
     private double price;
     private String description;
 
-    private String product;
+    private String name;
     private int quantity;
 
 
-    public Product(Brand brand, String model, String color, double price, String description, String product, int quantity) {
+
+    public Product(Brand brand,String color, double price, String description, String name, int quantity) {
         this.brand = brand;
-        this.model = model;
         this.color = color;
         this.price = price;
         this.description = description;
-        this.product = product;
+        this.name = name;
         this.quantity = quantity;
+
     }
 
 
@@ -38,13 +38,6 @@ public class Product {
         this.brand = brand;
     }
 
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
 
     public String getColor() {
         return color;
@@ -70,12 +63,12 @@ public class Product {
         this.description = description;
     }
 
-    public String getProduct() {
-        return product;
+    public String getName() {
+        return name;
     }
 
-    public void setProduct(String product) {
-        this.product = product;
+    public void setName(String name) {
+        this.name = name;
     }
 
 
