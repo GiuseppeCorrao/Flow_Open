@@ -1,5 +1,3 @@
-CREATE DATABASE IF NOT EXISTS flowopenProd;
 CREATE DATABASE IF NOT EXISTS flowopenDev;
-CREATE DATABASE IF NOT EXISTS flowopenTest;
 
-USE flowopen;
+USE flowopenDev;
