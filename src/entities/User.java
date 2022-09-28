@@ -1,8 +1,7 @@
 package entities;
-
 import java.time.LocalDate;
 
-public class User{
+public class User {
 
     String nameUser;
     String surnameUser;
@@ -12,7 +11,7 @@ public class User{
     String email;
     String password;
 
-    public User(String email,String password){
+    public User(String email, String password) {
         this.email = email;
         this.password = password;
 
@@ -29,3 +28,6 @@ public class User{
 
     }
 }
+
+
+
