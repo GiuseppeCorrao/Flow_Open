@@ -12,8 +12,8 @@ public class CartTest {
     @Test
     void buyTest() {
         Cart cart = new Cart();
-        Product computer = new Product(Brand.ACER, "TravelMate P2", "Black", 329.00, "This PC works", "pc", 4);
-        Product computer1 = new Product(Brand.HP, "TravelMate P2", "Black", 329.00, "This PC works", "pc", 4);
+        Product computer = new Product(Brand.ACER, "Black", 329.00, "This PC works", "pc", 4);
+        Product computer1 = new Product(Brand.HP, "Black", 329.00, "This PC works", "PC ", 4);
 
         cart.addOnCart(computer);
         cart.addOnCart(computer1);
@@ -24,7 +24,7 @@ public class CartTest {
 
     @Test
     void abortTest() {
-        Product product = new Product(Brand.ACER, "TravelMate P2", "Black", 329.00, "This PC works", "pc", 4);
+        Product product = new Product(Brand.ACER, "TravelMate P2", 329.00, "pc", "This PC works", 4);
         Cart cart = new Cart();
 
         cart.addOnCart(product);
@@ -37,7 +37,7 @@ public class CartTest {
 
     @Test
     void addOnCartTest() {
-        Product computer = new Product(Brand.ACER, "dsdkkdsksds", "jjjjd", 3.0, "idskdskdk", "computer", 10);
+        Product computer = new Product(Brand.ACER, "dsdkkdsksds", 368.89, "is a pc", "idskdskdk", 10);
         Cart cart = new Cart();
 
         cart.addOnCart(computer);
@@ -49,9 +49,9 @@ public class CartTest {
     @Test
     void totalPriceTestWithProductOnCart() {
         Cart cart = new Cart();
-        Product smartphone = new Product(Brand.ACER, "SJDJDJJSD", "CKDSKSKKS", 3.0, "SKSKK", "smartphone", 10);
-        Product tv = new Product(Brand.LG, "SJDJDJJSD", "CKDSKSKKS", 3.0, "SKSKK", "TV", 34);
-        Product mouse = new Product(Brand.LG, "SJDJDJJSD", "CKDSKSKKS", 3.0, "SKSKK", "TV", 34);
+        Product smartphone = new Product(Brand.ACER, "SJDJDJJSD", 3.0, "smartphone", "SKSKK", 10);
+        Product tv = new Product(Brand.LG, "SJDJDJJSD", 3.0, "tv", "SKSKK", 34);
+        Product mouse = new Product(Brand.LG, "SJDJDJJSD", 3.0, "mouse", "SKSKK", 34);
 
         cart.addOnCart(smartphone);
         cart.addOnCart(tv);
@@ -70,7 +70,7 @@ public class CartTest {
     @Test
     void priceDeliveryWithPriceOfProductSuperiorTo100() {
         Cart cart = new Cart();
-        Product smartphone = new Product(Brand.ACER, "SJDJDJJSD", "CKDSKSKKS", 300.00, "SKSKK", "smartphone", 10);
+        Product smartphone = new Product(Brand.ACER, "SJDJDJJSD", 30.89, "smartphone", "SKSKK", 10);
 
         cart.addOnCart(smartphone);
 
@@ -81,7 +81,7 @@ public class CartTest {
     @Test
     void priceDeliveryWithPriceOfProductInferiorTo100() {
         Cart cart = new Cart();
-        Product raspberryPi4 = new Product(Brand.LG, "SJDJDJJSD", "CKDSKSKKS", 6.38, "SKSKK", "TV", 34);
+        Product raspberryPi4 = new Product(Brand.LG, "SJDJDJJSD", 6.38, "jojo", "SKSKK", 34);
 
         cart.addOnCart(raspberryPi4);
 
