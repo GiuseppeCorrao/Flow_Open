@@ -8,21 +8,13 @@ import java.util.List;
 public class UserTest {
 
     @Test
-    void takeUserObjectTestWithFullListCase() {
+    void takeUserObjectTest() {
         User user = new User("email", "password");
         List<User> list = new ArrayList<>();
 
-        list.add(user);
+        user.takeUserObjects(list);
 
-        Assertions.assertTrue(list.contains(user));
+        Assertions.assertFalse(list.isEmpty());
     }
 
-    @Test
-    void takeUserObjectTestWithEmptyListCase() {
-        User user = new User("email", "password");
-
-        List<User> list = new ArrayList<>();
-
-        Assertions.assertFalse(list.contains(user));
-    }
 }
