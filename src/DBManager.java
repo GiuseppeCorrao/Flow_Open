@@ -37,7 +37,7 @@ public class DBManager {
                     "product_color CHAR(30),\n" +
                     "product_description VARCHAR(255),\n" +
                     "product_quantity INTEGER(100),\n" +
-                    "product_brand ENUM('ACER','HP','ASUS','PANASONIC','LENOVO','SAMSUNG','APPLE','XIAOMI','REDMI','RAZER','LG','HUAWEI','NOKIA','SONY','MICROSOFT'),\n" +
+                    "product_brand VARCHAR(20) NOT NULL CHECK (product_brand IN('ACER','HP','ASUS','PANASONIC','LENOVO','SAMSUNG','APPLE','XIAOMI','REDMI','RAZER','LG','HUAWEI','NOKIA','SONY','MICROSOFT')),\n" +
                     "PRIMARY KEY (product_id)\n" +
                     ");");
 

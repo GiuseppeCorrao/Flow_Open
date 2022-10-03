@@ -1,6 +1,9 @@
 package products;
 
 
+import java.sql.*;
+import java.util.List;
+
 public class Product {
 
     /**
@@ -26,6 +29,38 @@ public class Product {
         this.name = name;
         this.quantity = quantity;
 
+    }
+
+    /**
+     * @Author Giuseppe Corrao
+     * this metodh add a user on db with PreparedStatement
+     */
+    public void addProductOnDB(Product p){
+
+
+
+        try{
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/flowOpenDev","developer","developer");
+
+            Statement state = connection.createStatement();
+
+            // Il ? è un segnaposto per un parametro
+
+            String sql = "INSERT INTO Product (product_name,product_price,product_color,product_description,product_quantity,product_brand) VALUES ('?','?','?','?','?','?');";
+
+            // I parametri sono numerati a partire da 1, dal primo ? che viene trovato nella stringa SQL
+
+            PreparedStatement pstmt = connection.prepareStatement( sql );
+            pstmt.setString(1, p.name );
+            pstmt.setDouble(2,p.price);
+            pstmt.setString(3, p.color );
+            pstmt.setString(4,p.description);
+            pstmt.setInt(5,p.quantity);
+            pstmt.setString(6, String.valueOf(p.brand));
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 
 
