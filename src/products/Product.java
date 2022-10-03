@@ -40,7 +40,7 @@ public class Product {
 
 
         try{
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/flowopenDev","developer","developer");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/flowopendev","developer","developer");
 
             Statement state = connection.createStatement();
 
