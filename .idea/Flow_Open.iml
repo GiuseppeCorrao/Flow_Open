@@ -58,5 +58,14 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="mysql.connector.java1" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../SQL2/lib/mysql-connector-java-8.0.30.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
