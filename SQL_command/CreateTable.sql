@@ -14,4 +14,7 @@ User_sex ENUM('male', 'female'),
 User_email VARCHAR(50),
 User_password VARCHAR(30),
 PRIMARY KEY (User_id));
-)
+
+
+
+

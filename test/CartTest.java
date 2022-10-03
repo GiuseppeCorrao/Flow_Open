@@ -70,7 +70,7 @@ public class CartTest {
     @Test
     void priceDeliveryWithPriceOfProductSuperiorTo100() {
         Cart cart = new Cart();
-        Product smartphone = new Product(Brand.ACER, "SJDJDJJSD", 30.89, "smartphone", "SKSKK", 10);
+        Product smartphone = new Product(Brand.ACER, "SJDJDJJSD", 130.89, "smartphone", "SKSKK", 10);
 
         cart.addOnCart(smartphone);
 
