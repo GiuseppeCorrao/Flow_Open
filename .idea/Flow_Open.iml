@@ -58,5 +58,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="mysql.connector.java1" level="project" />
+    <orderEntry type="library" name="mysql.connector.java" level="project" />
   </component>
 </module>
