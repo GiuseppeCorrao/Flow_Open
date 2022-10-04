@@ -42,7 +42,7 @@ public class User {
 
         try {
 
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/flowopenDev", "developer", "developer1_");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/flowopenDev", "developer", "developer");
 
             Statement statement = conn.createStatement();
 
