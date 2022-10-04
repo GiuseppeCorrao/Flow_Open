@@ -1,5 +1,7 @@
 package products;
 
+import java.sql.*;
+import java.util.List;
 
 public class Product {
 
@@ -79,6 +81,34 @@ public class Product {
         return quantity;
     }
 
+
+    public List<Product> takeTheProducts(List<Product> listOfProducts) throws SQLException {
+
+        try {
+            Connection connection;
+
+            connection= DriverManager.getConnection("jdbc:mysql://localhost:3306/flowopenDev", "root", "dante123");
+
+            Statement statement= connection.createStatement();
+
+            ResultSet resultSet= statement.executeQuery("select * from Product");
+            while (resultSet.next()){
+
+                Integer product_id= resultSet.getInt("product_id");
+                String nameProduct= resultSet.getString("product_name");
+                Float priceProduct= resultSet.getFloat("product_price");
+                String colorProduct= resultSet.getString("product_color");
+                String descriptionProduct= resultSet.getString("product_description");
+                Integer quantityProduct= resultSet.getInt("product_quantity");
+                Brand.valueOf(resultSet.getString("product_brand"));
+            }
+
+            connection.close();
+        }catch (SQLException error){
+            error.printStackTrace();
+        }
+        return listOfProducts;
+    }
 
 }
 
