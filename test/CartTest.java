@@ -1,3 +1,4 @@
+import businesslogic.BusinessLogic;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import products.Brand;
@@ -86,6 +87,16 @@ public class CartTest {
         cart.addOnCart(raspberryPi4);
 
         Assertions.assertEquals(15, cart.priceDelivery());
+    }
+
+    @Test
+    void calculateIvaTest() {
+        Cart cart = new Cart();
+        Product raspberryPi4 = new Product(Brand.LG, "SJDJDJJSD", 6.38, "jojo", "SKSKK", 34);
+
+        raspberryPi4.getPrice();
+
+        Assertions.assertEquals(1.4036, cart.calculateIva(raspberryPi4.getPrice()) );
     }
 
 }

@@ -63,6 +63,12 @@ public class Cart {
         return priceDelivery;
     }
 
+    @Deprecated
+    public double calculateIva(double price) {
+        int iva = 22;
+        return (price * iva) / 100;
+    }
+
     public List<Product> getProductsOnCart() {
         return productsOnCart;
     }
