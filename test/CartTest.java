@@ -1,3 +1,4 @@
+import businesslogic.BusinessLogic;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import products.Brand;
@@ -57,7 +58,7 @@ public class CartTest {
         cart.addOnCart(tv);
         cart.addOnCart(mouse);
 
-        Assertions.assertEquals(9.0, cart.totalPrice());
+        Assertions.assertEquals(54.0, cart.totalPrice());
     }
 
     @Test
@@ -70,7 +71,7 @@ public class CartTest {
     @Test
     void priceDeliveryWithPriceOfProductSuperiorTo100() {
         Cart cart = new Cart();
-        Product smartphone = new Product(Brand.ACER, "SJDJDJJSD", 30.89, "smartphone", "SKSKK", 10);
+        Product smartphone = new Product(Brand.ACER, "SJDJDJJSD", 130.89, "smartphone", "SKSKK", 10);
 
         cart.addOnCart(smartphone);
 
@@ -86,6 +87,20 @@ public class CartTest {
         cart.addOnCart(raspberryPi4);
 
         Assertions.assertEquals(15, cart.priceDelivery());
+    }
+
+    @Test
+    void calculateIvaTest() {
+        Cart cart = new Cart();
+        Product smartphone = new Product(Brand.ACER, "SJDJDJJSD", 3.0, "smartphone", "SKSKK", 10);
+        Product tv = new Product(Brand.LG, "SJDJDJJSD", 3.0, "tv", "SKSKK", 34);
+        Product mouse = new Product(Brand.LG, "SJDJDJJSD", 3.0, "mouse", "SKSKK", 34);
+
+        cart.addOnCart(smartphone);
+        cart.addOnCart(tv);
+        cart.addOnCart(mouse);
+
+        Assertions.assertEquals(11.88, cart.calculateIva() );
     }
 
 }
