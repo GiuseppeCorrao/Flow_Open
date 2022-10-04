@@ -58,7 +58,7 @@ public class CartTest {
         cart.addOnCart(tv);
         cart.addOnCart(mouse);
 
-        Assertions.assertEquals(9.0, cart.totalPrice());
+        Assertions.assertEquals(54.0, cart.totalPrice());
     }
 
     @Test
@@ -92,11 +92,15 @@ public class CartTest {
     @Test
     void calculateIvaTest() {
         Cart cart = new Cart();
-        Product raspberryPi4 = new Product(Brand.LG, "SJDJDJJSD", 6.38, "jojo", "SKSKK", 34);
+        Product smartphone = new Product(Brand.ACER, "SJDJDJJSD", 3.0, "smartphone", "SKSKK", 10);
+        Product tv = new Product(Brand.LG, "SJDJDJJSD", 3.0, "tv", "SKSKK", 34);
+        Product mouse = new Product(Brand.LG, "SJDJDJJSD", 3.0, "mouse", "SKSKK", 34);
 
-        raspberryPi4.getPrice();
+        cart.addOnCart(smartphone);
+        cart.addOnCart(tv);
+        cart.addOnCart(mouse);
 
-        Assertions.assertEquals(1.4036, cart.calculateIva(raspberryPi4.getPrice()) );
+        Assertions.assertEquals(11.88, cart.calculateIva() );
     }
 
 }

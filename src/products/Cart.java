@@ -38,14 +38,17 @@ public class Cart {
 
 
     public double totalPrice() {
+        Cart cart = new Cart();
         double sum = 0;
         for (int i = 0; i < productsOnCart.size(); i++) {
 
             sum += productsOnCart.get(i).getPrice();
+            sum += cart.priceDelivery();
 
         }
         return sum;
     }
+
 
     /**
      * This method determines when the client pay the delivery and when he doesn't
@@ -56,17 +59,18 @@ public class Cart {
     public double priceDelivery() {
         double priceDelivery = 15;
         if (totalPrice() > 100) {
-            System.out.println(priceDelivery = 0);
+            return priceDelivery = 0;
         } else {
-            System.out.println(priceDelivery);
+            return priceDelivery;
         }
-        return priceDelivery;
+
     }
 
+
     @Deprecated
-    public double calculateIva(double price) {
+    public double calculateIva() {
         int iva = 22;
-        return (price * iva) / 100;
+        return (totalPrice() * iva) / 100;
     }
 
     public List<Product> getProductsOnCart() {
