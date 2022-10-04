@@ -1,4 +1,5 @@
 package entities;
+
 import java.time.LocalDate;
 
 public class User {
@@ -26,6 +27,19 @@ public class User {
         this.email = email;
         this.password = password;
 
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "nameUser='" + nameUser + '\'' +
+                ", surnameUser='" + surnameUser + '\'' +
+                ", age=" + age +
+                ", birthday=" + birthday +
+                ", sex='" + sex + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }
 
