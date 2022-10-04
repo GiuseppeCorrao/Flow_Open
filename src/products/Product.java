@@ -20,6 +20,17 @@ public class Product {
     private int quantity;
 
 
+    /**
+     * @refactor of this param
+     * @param name = porduct_name
+     * @param description = product_description
+     * @param brand = product_brand
+     * @param color = product_color
+     * @param price = product_price
+     * @param quantity = product_quantity
+     * = (value) correspond at any row of product on db
+     */
+
     public Product(String name, String description, Brand brand, String color, double price, int quantity) {
         this.name = name;
         this.description = description;

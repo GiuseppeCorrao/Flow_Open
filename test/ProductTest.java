@@ -13,7 +13,6 @@ public class ProductTest {
 
        product.addProductOnDB(product);
 
-
-
+       //cannot verify if Object are on DB
     }
 }
