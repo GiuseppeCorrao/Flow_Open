@@ -110,7 +110,17 @@ public class Product {
         return quantity;
     }
 
-
+    @Override
+    public String toString() {
+        return "Product{" +
+                "brand=" + brand +
+                ", color='" + color + '\'' +
+                ", price=" + price +
+                ", description='" + description + '\'' +
+                ", name='" + name + '\'' +
+                ", quantity=" + quantity +
+                '}';
+    }
 }
 
 
