@@ -18,7 +18,7 @@ public class UserTest extends User {
 
         takeUserFromDB(list);
 
-        Assertions.assertTrue(list.get(0).getNameUser().equals("Samuele"));
+        Assertions.assertEquals("Samuele", list.get(0).getNameUser());
 
     }
 
@@ -28,7 +28,7 @@ public class UserTest extends User {
 
         takeUserFromDB(list);
 
-        Assertions.assertFalse(list.get(0).getNameUser().equals("Mimmo"));
+        Assertions.assertNotEquals("Mimmo", list.get(0).getNameUser());
 
     }
 }
