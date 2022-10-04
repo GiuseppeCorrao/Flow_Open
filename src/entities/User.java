@@ -1,7 +1,9 @@
 package entities;
 
+
 import java.sql.*;
 import java.util.List;
+
 
 public class User {
 
@@ -12,13 +14,13 @@ public class User {
     String sex;
     String email;
     String password;
-    List<String> userObject;
 
     public User(String email, String password) {
         this.email = email;
         this.password = password;
 
     }
+
 
     public User(String nameUser, String surnameUser, int age, Date birthday, String sex, String email, String password) {
         this.nameUser = nameUser;
@@ -31,7 +33,10 @@ public class User {
 
     }
 
-    public List<User> takeUserObjects(List<User> userObject) {
+    public User() {
+    }
+
+    public List<User> takeUserFromDB(List<User> listOfUserFromDB) {
 
         Connection conn;
 
@@ -52,15 +57,30 @@ public class User {
                 email = pointer.getString("User_email");
                 password = pointer.getString("User_password");
 
-                userObject.add(new User(nameUser, surnameUser, age, birthday, sex, email, password));
+                listOfUserFromDB.add(new User(nameUser, surnameUser, age, birthday, sex, email, password));
             }
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        return userObject;
+        return listOfUserFromDB;
+    }
+
+    public String getNameUser() {
+        return nameUser;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "nameUser='" + nameUser + '\'' +
+                ", surnameUser='" + surnameUser + '\'' +
+                ", age=" + age +
+                ", birthday=" + birthday +
+                ", sex='" + sex + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+
     }
 }
-
-
-

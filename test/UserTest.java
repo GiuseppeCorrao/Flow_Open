@@ -2,19 +2,36 @@ import entities.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserTest {
+public class UserTest extends User {
 
+    /**
+     * @author Samuele Catalano
+     * @BeforeRun add a User by the DevStart class on DB with value nameUser 'Samuele'.
+     */
     @Test
-    void takeUserObjectTest() {
-        User user = new User("email", "password");
+    void takeUserFromDBTestWithTrueCondition() {
         List<User> list = new ArrayList<>();
 
-        user.takeUserObjects(list);
+        takeUserFromDB(list);
 
-        Assertions.assertFalse(list.isEmpty());
+        Assertions.assertTrue(list.get(0).getNameUser().equals("Samuele"));
+
     }
 
+    @Test
+    void takeUserFromDBTestWithFalseCondition() {
+        List<User> list = new ArrayList<>();
+
+        takeUserFromDB(list);
+
+        Assertions.assertFalse(list.get(0).getNameUser().equals("Mimmo"));
+
+    }
 }
+
+
+
