@@ -1,6 +1,5 @@
 package entities;
 
-
 import java.sql.*;
 import java.util.List;
 
@@ -32,6 +31,7 @@ public class User {
         this.password = password;
 
     }
+
 
     public User() {
     }
