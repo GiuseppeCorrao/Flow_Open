@@ -9,7 +9,7 @@ public class ProductTest {
 
     @Test
     public void addProductOnDBTest(){
-        Product product = new Product(ASUS,"blue",329.99,"a good pc","ROGstrix",5);
+        Product product = new Product("ROGstrix","a good pc",ASUS,"black",329.99,5);
 
        product.addProductOnDB(product);
 
