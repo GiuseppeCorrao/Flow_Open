@@ -53,7 +53,7 @@ public class Cart {
     /**
      * This method determines when the client pay the delivery and when he doesn't
      *
-     * @version 2.0
+     * @version 3.0
      * @author Samuele Catalano
      */
     public double priceDelivery() {

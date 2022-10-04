@@ -1,4 +1,3 @@
-import businesslogic.BusinessLogic;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import products.Brand;
@@ -100,7 +99,7 @@ public class CartTest {
         cart.addOnCart(tv);
         cart.addOnCart(mouse);
 
-        Assertions.assertEquals(11.88, cart.calculateIva() );
+        Assertions.assertEquals(11.88, cart.calculateIva());
     }
-
 }
+
