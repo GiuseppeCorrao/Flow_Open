@@ -5,7 +5,7 @@ import products.Product;
 
 public class BusinessLogic {
 
-
+    @Deprecated
     public double getCalculateDiscount(Product product, DiscountPercentage discountPercentage) {
         double priceDiscount = (discountPercentage.getPercentage() * product.getPrice()) / 100;
         double result = product.getPrice() - priceDiscount;
