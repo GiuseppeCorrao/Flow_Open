@@ -16,9 +16,7 @@ public class Product {
     private String name;
     private int quantity;
 
-
-
-    public Product(Brand brand,String color, double price, String description, String name, int quantity) {
+    public Product(Brand brand, String color, double price, String description, String name, int quantity) {
         this.brand = brand;
         this.color = color;
         this.price = price;
@@ -81,14 +79,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "brand=" + brand +
-                ", color='" + color + '\'' +
-                ", price=" + price +
-                ", description='" + description + '\'' +
-                ", name='" + name + '\'' +
-                ", quantity=" + quantity +
-                '}';
+        return "Product{" + "brand=" + brand + ", color='" + color + '\'' + ", price=" + price + ", description='" + description + '\'' + ", name='" + name + '\'' + ", quantity=" + quantity + '}';
     }
 }
 

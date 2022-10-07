@@ -12,7 +12,6 @@ public class Cart {
 
     public Cart() {
         this.productsOnCart = new ArrayList<Product>();
-
     }
 
 
@@ -44,7 +43,6 @@ public class Cart {
 
             sum += productsOnCart.get(i).getPrice();
             sum += cart.priceDelivery();
-
         }
         return sum;
     }
@@ -57,8 +55,8 @@ public class Cart {
      * @author Samuele Catalano
      */
     public double priceDelivery() {
-        double priceDelivery = 15;
-        if (totalPrice() > 100) {
+        double priceDelivery = 8;
+        if (totalPrice() > 30) {
             return priceDelivery = 0;
         } else {
             return priceDelivery;
@@ -72,6 +70,7 @@ public class Cart {
         int iva = 22;
         return (totalPrice() * iva) / 100;
     }
+
 
     public List<Product> getProductsOnCart() {
         return productsOnCart;

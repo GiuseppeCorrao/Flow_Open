@@ -38,54 +38,72 @@ public class CartTest {
     @Test
     void addOnCartTest() {
         Product computer = new Product(Brand.ACER, "dsdkkdsksds", 368.89, "is a pc", "idskdskdk", 10);
+        Product computers = new Product(Brand.ACER, "dsdkkdsksds", 368.89, "is a pc", "idskdskdk", 10);
         Cart cart = new Cart();
 
         cart.addOnCart(computer);
+        cart.addOnCart(computers);
 
-        Assertions.assertTrue(cart.getProductsOnCart().contains(computer));
+        Assertions.assertEquals(cart.getProductsOnCart().contains(computer), cart.getProductsOnCart().contains(computers));
 
     }
 
     @Test
-    void totalPriceTestWithProductOnCart() {
+    void totalPriceTestWithProductSuperiorTo30() {
         Cart cart = new Cart();
-        Product smartphone = new Product(Brand.ACER, "SJDJDJJSD", 3.0, "smartphone", "SKSKK", 10);
+        Product smartphone = new Product(Brand.ACER, "SJDJDJJSD", 100.0, "smartphone", "SKSKK", 10);
+        Product tv = new Product(Brand.LG, "SJDJDJJSD", 3.0, "tv", "SKSKK", 34);
+        Product mouse = new Product(Brand.LG, "SJDJDJJSD", 3.0, "mouse", "SKSKK", 34);
+
+
+        cart.addOnCart(smartphone);
+        cart.addOnCart(tv);
+        cart.addOnCart(mouse);
+        double totalPrice = cart.totalPrice();
+
+        Assertions.assertEquals(106.0, totalPrice);
+    }
+
+    @Test
+    void totalPriceTestWithTotalPriceSuperiorTo30() {
+        Cart cart = new Cart();
+        Product smartphone = new Product(Brand.ACER, "SJDJDJJSD", 30.0, "smartphone", "SKSKK", 10);
         Product tv = new Product(Brand.LG, "SJDJDJJSD", 3.0, "tv", "SKSKK", 34);
         Product mouse = new Product(Brand.LG, "SJDJDJJSD", 3.0, "mouse", "SKSKK", 34);
 
         cart.addOnCart(smartphone);
         cart.addOnCart(tv);
         cart.addOnCart(mouse);
+        double totalPrice = cart.totalPrice();
 
-        Assertions.assertEquals(54.0, cart.totalPrice());
+        Assertions.assertEquals(60.0, totalPrice);
     }
 
     @Test
-    void totalPriceWithEmptyCart() {
+    void priceDeliveryWithTotalPriceInferiorTo30() {
         Cart cart = new Cart();
+        Product smartphone = new Product(Brand.ACER, "SJDJDJJSD", 5.89, "smartphone", "SKSKK", 10);
+        Product smartphones = new Product(Brand.ACER, "SJDJDJJSD", 13.89, "smartphone", "SKSKK", 10);
 
-        Assertions.assertEquals(0.0, cart.totalPrice());
-    }
-
-    @Test
-    void priceDeliveryWithPriceOfProductSuperiorTo100() {
-        Cart cart = new Cart();
-        Product smartphone = new Product(Brand.ACER, "SJDJDJJSD", 130.89, "smartphone", "SKSKK", 10);
 
         cart.addOnCart(smartphone);
+        double priceDelivery = cart.priceDelivery();
 
-        Assertions.assertEquals(0.0, cart.priceDelivery());
+        Assertions.assertEquals(8.0, priceDelivery);
 
     }
 
     @Test
-    void priceDeliveryWithPriceOfProductInferiorTo100() {
+    void priceDeliveryWithPriceOfProductSuperiorTo30() {
         Cart cart = new Cart();
         Product raspberryPi4 = new Product(Brand.LG, "SJDJDJJSD", 6.38, "jojo", "SKSKK", 34);
+        Product smartphone = new Product(Brand.ACER, "SJDJDJJSD", 30.89, "smartphone", "SKSKK", 10);
 
         cart.addOnCart(raspberryPi4);
+        cart.addOnCart(smartphone);
+        double priceDelivery = cart.priceDelivery();
 
-        Assertions.assertEquals(15, cart.priceDelivery());
+        Assertions.assertEquals(0.0, priceDelivery);
     }
 
     @Test
@@ -98,8 +116,10 @@ public class CartTest {
         cart.addOnCart(smartphone);
         cart.addOnCart(tv);
         cart.addOnCart(mouse);
+        double calculateIva = cart.calculateIva();
 
-        Assertions.assertEquals(11.88, cart.calculateIva());
+        Assertions.assertEquals(1.98, calculateIva);
+
     }
 }
 
