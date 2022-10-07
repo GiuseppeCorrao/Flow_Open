@@ -11,7 +11,7 @@ public class BusinessLogicTest {
     @Test
     void calculateDiscountTest() {
         BusinessLogic businessLogic = new BusinessLogic();
-        Product product = new Product(Brand.APPLE, "4x4", 135.00, "è un pc molto veloce, potente", "computer", 50);
+        Product product = new Product(Brand.APPLE, "4x4", 135.00, "è un pc molto veloce, potente", "computer", 50,5);
         double calculate = businessLogic.getCalculateDiscount(product, DiscountPercentage.PERCENTAGE15);
         Assertions.assertEquals(114.75, calculate);
     }

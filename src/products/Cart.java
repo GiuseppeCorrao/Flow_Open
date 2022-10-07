@@ -40,30 +40,20 @@ public class Cart {
         Cart cart = new Cart();
         double sum = 0;
         for (int i = 0; i < productsOnCart.size(); i++) {
-
             sum += productsOnCart.get(i).getPrice();
-            sum += cart.priceDelivery();
+
         }
+        if(sum>30){
+            return sum;
+        }else{
+            for(int i=0; i<productsOnCart.size(); i++) {
+                return sum += productsOnCart.get(i).getPriceDelivery();
+            }
+
+        }
+
         return sum;
     }
-
-
-    /**
-     * This method determines when the client pay the delivery and when he doesn't
-     *
-     * @version 3.0
-     * @author Samuele Catalano
-     */
-    public double priceDelivery() {
-        double priceDelivery = 8;
-        if (totalPrice() > 30) {
-            return priceDelivery = 0;
-        } else {
-            return priceDelivery;
-        }
-
-    }
-
 
     @Deprecated
     public double calculateIva() {

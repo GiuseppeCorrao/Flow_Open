@@ -15,15 +15,20 @@ public class Product {
     private String description;
     private String name;
     private int quantity;
+    private double priceDelivery;
 
-    public Product(Brand brand, String color, double price, String description, String name, int quantity) {
+    public double getPriceDelivery() {
+        return priceDelivery;
+    }
+
+    public Product(Brand brand, String color, double price, String description, String name, int quantity, double priceDelivery) {
         this.brand = brand;
         this.color = color;
         this.price = price;
         this.description = description;
         this.name = name;
         this.quantity = quantity;
-
+        this.priceDelivery = priceDelivery;
     }
 
 
