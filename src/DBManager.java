@@ -47,7 +47,7 @@ public class DBManager {
                     "User_surname VARCHAR(255),\n" +
                     "User_age INTEGER(120),\n" +
                     "User_birthday DATE,\n" +
-                    "User_gender ENUM('male','female'),\n" +
+                    "User_gender VARCHAR(10),\n" +
                     "User_email VARCHAR(50),\n" +
                     "User_password VARCHAR(30),\n" +
                     "PRIMARY KEY (User_id)\n" +

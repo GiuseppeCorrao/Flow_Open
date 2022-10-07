@@ -53,7 +53,7 @@ public class User {
                 surnameUser = pointer.getString("User_surname");
                 age = pointer.getInt("User_age");
                 birthday = pointer.getDate("User_birthday");
-                gender = pointer.getString("User_sex");
+                gender = pointer.getString("User_gender");
                 email = pointer.getString("User_email");
                 password = pointer.getString("User_password");
 
