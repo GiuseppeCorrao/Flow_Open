@@ -11,7 +11,7 @@ public class User {
     String surnameUser;
     int age;
     Date birthday;
-    String sex;
+    String gender;
     String email;
     String password;
 
@@ -22,12 +22,12 @@ public class User {
     }
 
 
-    public User(String nameUser, String surnameUser, int age, Date birthday, String sex, String email, String password) {
+    public User(String nameUser, String surnameUser, int age, Date birthday, String gender, String email, String password) {
         this.nameUser = nameUser;
         this.surnameUser = surnameUser;
         this.age = age;
         this.birthday = birthday;
-        this.sex = sex;
+        this.gender = gender;
         this.email = email;
         this.password = password;
 
@@ -53,11 +53,11 @@ public class User {
                 surnameUser = pointer.getString("User_surname");
                 age = pointer.getInt("User_age");
                 birthday = pointer.getDate("User_birthday");
-                sex = pointer.getString("User_sex");
+                gender = pointer.getString("User_sex");
                 email = pointer.getString("User_email");
                 password = pointer.getString("User_password");
 
-                listOfUserFromDB.add(new User(nameUser, surnameUser, age, birthday, sex, email, password));
+                listOfUserFromDB.add(new User(nameUser, surnameUser, age, birthday, gender, email, password));
             }
 
         } catch (SQLException e) {
@@ -72,15 +72,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "nameUser='" + nameUser + '\'' +
-                ", surnameUser='" + surnameUser + '\'' +
-                ", age=" + age +
-                ", birthday=" + birthday +
-                ", sex='" + sex + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+        return "User{" + "nameUser='" + nameUser + '\'' + ", surnameUser='" + surnameUser + '\'' + ", age=" + age + ", birthday=" + birthday + ", gender='" + gender + '\'' + ", email='" + email + '\'' + ", password='" + password + '\'' + '}';
 
     }
 }
