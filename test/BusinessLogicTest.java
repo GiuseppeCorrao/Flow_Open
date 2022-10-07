@@ -7,7 +7,10 @@ import products.Product;
 
 public class BusinessLogicTest {
 
-
+    @Test
+    void calculateIvaTest() {
+        Assertions.assertEquals(73.26, BusinessLogic.calculateIva(333));
+    }
     @Test
     void calculateDiscountTest() {
         BusinessLogic businessLogic = new BusinessLogic();

@@ -55,11 +55,6 @@ public class Cart {
         return sum;
     }
 
-    @Deprecated
-    public double calculateIva() {
-        int iva = 22;
-        return (totalPrice() * iva) / 100;
-    }
 
 
     public List<Product> getProductsOnCart() {
