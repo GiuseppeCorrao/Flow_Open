@@ -11,6 +11,8 @@ public class BusinessLogic {
         return (price * iva) / 100;
     }
 
+
+
     @Deprecated
     public double getCalculateDiscount(Product product, DiscountPercentage discountPercentage) {
         double priceDiscount = (discountPercentage.getPercentage() * product.getPrice()) / 100;

@@ -53,7 +53,7 @@ public class CartTest {
         Cart cart = new Cart();
         Product smartphone = new Product(Brand.ACER, "SJDJDJJSD", 6.0, "smartphone", "SKSKK", 10, 8);
         Product tv = new Product(Brand.LG, "SJDJDJJSD", 3.0, "tv", "SKSKK", 34, 8);
-        Product mouse = new Product(Brand.LG, "SJDJDJJSD", 3.0, "mouse", "SKSKK", 34, 30);
+        Product mouse = new Product(Brand.LG, "SJDJDJJSD", 3.0, "mouse", "SKSKK", 34, 6);
 
 
         cart.addOnCart(smartphone);

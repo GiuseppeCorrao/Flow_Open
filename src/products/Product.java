@@ -17,9 +17,6 @@ public class Product {
     private int quantity;
     private double priceDelivery;
 
-    public double getPriceDelivery() {
-        return priceDelivery;
-    }
 
     public Product(Brand brand, String color, double price, String description, String name, int quantity, double priceDelivery) {
         this.brand = brand;
@@ -82,9 +79,13 @@ public class Product {
         return quantity;
     }
 
+    public void setPriceDelivery(double priceDelivery) {
+        this.priceDelivery = priceDelivery;
+    }
+
     @Override
     public String toString() {
-        return "Product{" + "brand=" + brand + ", color='" + color + '\'' + ", price=" + price + ", description='" + description + '\'' + ", name='" + name + '\'' + ", quantity=" + quantity + '}';
+        return brand + "\n" + color + "\n" + price + "\n" + description + "\n" + name + "\n" + quantity + "\n" + priceDelivery);
     }
 }
 

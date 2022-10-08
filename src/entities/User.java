@@ -31,16 +31,9 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "nameUser='" + nameUser + '\'' +
-                ", surnameUser='" + surnameUser + '\'' +
-                ", age=" + age +
-                ", birthday=" + birthday +
-                ", sex='" + sex + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+        return nameUser + "\n" + surnameUser + "\n" + age + "\n" + birthday + "\n" + sex + "\n" + email + "\n" + password;
     }
+
 }
 
 
