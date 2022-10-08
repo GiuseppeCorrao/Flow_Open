@@ -85,7 +85,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return brand + "\n" + color + "\n" + price + "\n" + description + "\n" + name + "\n" + quantity + "\n" + priceDelivery);
+        return brand + "\n" + color + "\n" + price + "\n" + description + "\n" + name + "\n" + quantity + "\n" + priceDelivery;
     }
 }
 
