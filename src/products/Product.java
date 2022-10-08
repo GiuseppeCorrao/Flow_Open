@@ -1,6 +1,9 @@
 package products;
 
 
+import java.sql.*;
+import java.util.List;
+
 public class Product {
 
     /**
@@ -17,15 +20,54 @@ public class Product {
     private int quantity;
 
 
+    /**
+     * @refactor of this param
+     * @param name = porduct_name
+     * @param description = product_description
+     * @param brand = product_brand
+     * @param color = product_color
+     * @param price = product_price
+     * @param quantity = product_quantity
+     * = (value) correspond at any row of product on db
+     */
 
-    public Product(Brand brand,String color, double price, String description, String name, int quantity) {
+    public Product(String name, String description, Brand brand, String color, double price, int quantity) {
+        this.name = name;
+        this.description = description;
         this.brand = brand;
         this.color = color;
         this.price = price;
-        this.description = description;
-        this.name = name;
         this.quantity = quantity;
 
+    }
+
+    /**
+     * @Author Giuseppe Corrao
+     * this metodh add a user on db with PreparedStatement
+     */
+    public void addProductOnDB(Product p) {
+
+
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/flowopendev", "developer", "developer");
+
+            Statement state = connection.createStatement();
+
+            String sql = "INSERT INTO product (product_name,product_price,product_color,product_description,product_quantity,product_brand) VALUES (?,?,?,?,?,?);";
+
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            pstmt.setString(1, p.name);
+            pstmt.setDouble(2, p.price);
+            pstmt.setString(3, p.color);
+            pstmt.setString(4, p.description);
+            pstmt.setInt(5, p.quantity);
+            pstmt.setString(6, String.valueOf(p.brand));
+
+            pstmt.execute();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 
