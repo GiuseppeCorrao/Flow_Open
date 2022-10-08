@@ -39,7 +39,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/annotations/20.1.0/annotations-20.1.0.jar!/" />
@@ -67,5 +67,8 @@
         <SOURCES />
       </library>
     </orderEntry>
+
+    <orderEntry type="library" exported="" name="mysql.connector.java1" level="project" />
+
   </component>
 </module>
