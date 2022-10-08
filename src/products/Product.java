@@ -2,7 +2,7 @@ package products;
 
 
 import java.sql.*;
-import java.util.List;
+
 
 public class Product {
 
@@ -21,20 +21,17 @@ public class Product {
     private double priceDelivery;
 
 
-
     public Product(Brand brand, String color, double price, String description, String name, int quantity, double priceDelivery) {
-    /**
-     * @refactor of this param
-     * @param name = porduct_name
-     * @param description = product_description
-     * @param brand = product_brand
-     * @param color = product_color
-     * @param price = product_price
-     * @param quantity = product_quantity
-     * = (value) correspond at any row of product on db
-     */
-
-    public Product(String name, String description, Brand brand, String color, double price, int quantity) {
+        /**
+         * @refactor of this param
+         * @param name = porduct_name
+         * @param description = product_description
+         * @param brand = product_brand
+         * @param color = product_color
+         * @param price = product_price
+         * @param quantity = product_quantity
+         * = (value) correspond at any row of product on db
+         */
         this.name = name;
         this.description = description;
         this.brand = brand;
@@ -43,6 +40,7 @@ public class Product {
         this.quantity = quantity;
         this.priceDelivery = priceDelivery;
     }
+
 
     /**
      * @Author Giuseppe Corrao
@@ -120,18 +118,25 @@ public class Product {
         this.quantity = quantity;
     }
 
+
     public int getQuantity() {
         return quantity;
+    }
+
+    public double getPriceDelivery() {
+        return priceDelivery;
     }
 
     public void setPriceDelivery(double priceDelivery) {
         this.priceDelivery = priceDelivery;
     }
 
+
     @Override
     public String toString() {
         return brand + "\n" + color + "\n" + price + "\n" + description + "\n" + name + "\n" + quantity + "\n" + priceDelivery;
     }
 }
+
 
 
