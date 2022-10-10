@@ -5,6 +5,9 @@ import java.sql.*;
 import java.util.List;
 
 
+import java.util.Date;
+
+
 public class User {
 
     String nameUser;
@@ -21,7 +24,6 @@ public class User {
 
     }
 
-
     public User(String nameUser, String surnameUser, int age, Date birthday, String gender, String email, String password) {
         this.nameUser = nameUser;
         this.surnameUser = surnameUser;
@@ -33,8 +35,10 @@ public class User {
 
     }
 
+
     public User() {
     }
+
 
     public List<User> takeUserFromDB(List<User> listOfUserFromDB) {
 
