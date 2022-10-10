@@ -12,12 +12,13 @@ public class BusinessLogicTest {
         Assertions.assertEquals(73.26, BusinessLogic.calculateIva(333));
     }
 
-
     @Test
-    void calculateDiscountTest(){
-        BusinessLogic businessLogic= new BusinessLogic();
-        Product product= new Product("rosso", 135.00, "è un pc molto veloce, potente", "computer" , 50, Brand.APPLE);
-        double calculate= businessLogic.getCalculateDiscount(product, DiscountPercentage.PERCENTAGE15);
+    void calculateDiscountTest() {
+        BusinessLogic businessLogic = new BusinessLogic();
+        Product product = new Product(Brand.APPLE, "4x4", 135.00, "è un pc molto veloce, potente", "computer", 50, 5);
+        double calculate = businessLogic.getCalculateDiscount(product, DiscountPercentage.PERCENTAGE15);
         Assertions.assertEquals(114.75, calculate);
     }
+
 }
+

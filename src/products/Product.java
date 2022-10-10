@@ -18,17 +18,58 @@ public class Product {
     private String description;
     private String name;
     private int quantity;
+    private double priceDelivery;
 
 
 
-    public Product(String color, double price, String description, String name, int quantity, Brand brand) {
+    public Product(Brand brand, String color, double price, String description, String name, int quantity, double priceDelivery) {
+        /**
+         * @refactor of this param
+         * @param name = porduct_name
+         * @param description = product_description
+         * @param brand = product_brand
+         * @param color = product_color
+         * @param price = product_price
+         * @param quantity = product_quantity
+         * = (value) correspond at any row of product on db
+         */
+        this.name = name;
+        this.description = description;
         this.brand = brand;
         this.color = color;
         this.price = price;
-        this.description = description;
-        this.name = name;
         this.quantity = quantity;
+        this.priceDelivery = priceDelivery;
+    }
 
+
+    /**
+     * @Author Giuseppe Corrao
+     * this metodh add a user on db with PreparedStatement
+     */
+    public void addProductOnDB(Product p) {
+
+
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/flowopendev", "developer", "developer");
+
+            Statement state = connection.createStatement();
+
+            String sql = "INSERT INTO product (product_name,product_price,product_color,product_description,product_quantity,product_brand) VALUES (?,?,?,?,?,?);";
+
+            PreparedStatement pstmt = connection.prepareStatement(sql);
+            pstmt.setString(1, p.name);
+            pstmt.setDouble(2, p.price);
+            pstmt.setString(3, p.color);
+            pstmt.setString(4, p.description);
+            pstmt.setInt(5, p.quantity);
+            pstmt.setString(6, String.valueOf(p.brand));
+
+            pstmt.execute();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -78,6 +119,7 @@ public class Product {
         this.quantity = quantity;
     }
 
+
     public int getQuantity() {
         return quantity;
     }
@@ -95,14 +137,15 @@ public class Product {
             ResultSet resultSet= statement.executeQuery("select * from Product");
             while (resultSet.next()){
 
-                name= resultSet.getString("product_name");
-                price= resultSet.getFloat("product_price");
-                color= resultSet.getString("product_color");
-                description= resultSet.getString("product_description");
-                quantity= resultSet.getInt("product_quantity");
                 Brand.valueOf(resultSet.getString("product_brand"));
+                color= resultSet.getString("product_color");
+                price= resultSet.getFloat("product_price");
+                description= resultSet.getString("product_description");
+                name= resultSet.getString("product_name");
+                quantity= resultSet.getInt("product_quantity");
+                priceDelivery= resultSet.getDouble("product_priceDelivery");
 
-                listOfProducts.add(new Product(name, price, color, description, quantity, brand));
+                listOfProducts.add(new Product(brand, color, price, description, name, quantity, priceDelivery));
             }
 
             connection.close();
@@ -112,17 +155,20 @@ public class Product {
         return listOfProducts;
     }
 
+    public double getPriceDelivery() {
+        return priceDelivery;
+    }
+
+    public void setPriceDelivery(double priceDelivery) {
+        this.priceDelivery = priceDelivery;
+    }
+
+
     @Override
     public String toString() {
-        return "Product{" +
-                "brand=" + brand +
-                ", color='" + color + '\'' +
-                ", price=" + price +
-                ", description='" + description + '\'' +
-                ", name='" + name + '\'' +
-                ", quantity=" + quantity +
-                '}';
+        return brand + "\n" + color + "\n" + price + "\n" + description + "\n" + name + "\n" + quantity + "\n" + priceDelivery;
     }
 }
+
 
 
