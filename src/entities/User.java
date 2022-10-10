@@ -1,8 +1,5 @@
 package entities;
 
-import products.Brand;
-
-import java.sql.Connection;
 import java.time.LocalDate;
 
 public class User {
@@ -14,7 +11,6 @@ public class User {
     String sex;
     String email;
     String password;
-    Connection connection;
 
     public User(String email, String password) {
         this.email = email;

@@ -21,7 +21,7 @@ public class Product {
 
 
 
-    public Product(Brand brand,String color, double price, String description, String name, int quantity) {
+    public Product(String color, double price, String description, String name, int quantity, Brand brand) {
         this.brand = brand;
         this.color = color;
         this.price = price;
@@ -102,7 +102,7 @@ public class Product {
                 quantity= resultSet.getInt("product_quantity");
                 Brand.valueOf(resultSet.getString("product_brand"));
 
-                listOfProducts.add(new Product(brand, name, price, color, description, quantity));
+                listOfProducts.add(new Product(name, price, color, description, quantity, brand));
             }
 
             connection.close();

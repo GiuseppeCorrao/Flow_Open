@@ -13,8 +13,7 @@ class ProductTest {
 
     @Test
     public void takeTheProductsTest() throws SQLException {
-        Product product= new Product(Brand.APPLE, "4x4",135.00, "è un pc molto veloce, potente", "computer", 50);
-
+        Product product= new Product("rosso", 135.00, "è un pc molto veloce, potente", "computer" , 50, Brand.APPLE);
         List<Product> list= new ArrayList<>();
 
         product.takeTheProducts(list);
