@@ -42,7 +42,7 @@ public class LoginLogic {
 
         try {
 
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newdb", "developer", "developer");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/flowOpenDev", "developer", "developer");
 
             PreparedStatement pst = connection.prepareStatement(" INSERT INTO User (User_name, User_surname, User_age, User_birthday, User_gender, User_email, User_password) VALUES (?,?,?,?,?,?,?)");
 
@@ -56,7 +56,6 @@ public class LoginLogic {
 
             pst.executeUpdate();
             return true;
-
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());

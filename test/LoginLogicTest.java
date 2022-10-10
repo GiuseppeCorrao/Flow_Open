@@ -27,7 +27,7 @@ public class LoginLogicTest {
         LoginLogic loginLogic = new LoginLogic();
 
         List<User> enteredUsers = new ArrayList<>();
-        enteredUsers.add(new User("mm@gmail.com", "test"));
+        enteredUsers.add(new User("mkir@gmail.com", "Test01"));
 
         boolean logged = loginLogic.login(enteredUsers.get(0));
 
@@ -40,7 +40,7 @@ public class LoginLogicTest {
         LoginLogic loginLogic = new LoginLogic();
 
         List<User> enteredUsers = new ArrayList<>();
-        enteredUsers.add(new User("mm@gmail.com", "test1"));
+        enteredUsers.add(new User("mkir@gmail.com", "Test0"));
 
         boolean logged = loginLogic.login(enteredUsers.get(0));
 
