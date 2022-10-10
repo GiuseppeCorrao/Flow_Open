@@ -1,14 +1,15 @@
 package entities;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class User {
 
     String nameUser;
     String surnameUser;
     int age;
-    LocalDate birthday;
-    String sex;
+    Date birthday;
+    String gender;
     String email;
     String password;
 
@@ -18,12 +19,12 @@ public class User {
 
     }
 
-    public User(String nameUser, String surnameUser, int age, LocalDate birthday, String sex, String email, String password) {
+    public User(String nameUser, String surnameUser, int age, Date birthday, String gender, String email, String password) {
         this.nameUser = nameUser;
         this.surnameUser = surnameUser;
         this.age = age;
         this.birthday = birthday;
-        this.sex = sex;
+        this.gender = gender;
         this.email = email;
         this.password = password;
 
@@ -31,7 +32,7 @@ public class User {
 
     @Override
     public String toString() {
-        return nameUser + "\n" + surnameUser + "\n" + age + "\n" + birthday + "\n" + sex + "\n" + email + "\n" + password;
+        return nameUser + "\n" + surnameUser + "\n" + age + "\n" + birthday + "\n" + gender + "\n" + email + "\n" + password;
     }
 
 }

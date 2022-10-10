@@ -39,7 +39,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
           <root url="jar://$MAVEN_REPOSITORY$/org/jetbrains/annotations/20.1.0/annotations-20.1.0.jar!/" />
@@ -58,17 +58,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="mysql.connector.java1" level="project" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.22/lombok-1.18.22.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-
-    <orderEntry type="library" exported="" name="mysql.connector.java1" level="project" />
-
+    <orderEntry type="library" name="mysql.connector.java" level="project" />
   </component>
 </module>
