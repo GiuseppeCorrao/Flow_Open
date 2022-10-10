@@ -12,7 +12,6 @@ public class Cart {
 
     public Cart() {
         this.productsOnCart = new ArrayList<Product>();
-
     }
 
 
@@ -40,28 +39,22 @@ public class Cart {
     public double totalPrice() {
         double sum = 0;
         for (int i = 0; i < productsOnCart.size(); i++) {
-
             sum += productsOnCart.get(i).getPrice();
 
         }
+        if(sum>30){
+            return sum;
+        }else{
+            for(int i=0; i<productsOnCart.size(); i++) {
+                return sum += productsOnCart.get(i).getPriceDelivery();
+            }
+
+        }
+
         return sum;
     }
 
-    /**
-     * This method determines when the client pay the delivery and when he doesn't
-     *
-     * @version 2.0
-     * @author Samuele Catalano
-     */
-    public double priceDelivery() {
-        double priceDelivery = 15;
-        if (totalPrice() > 100) {
-            System.out.println(priceDelivery = 0);
-        } else {
-            System.out.println(priceDelivery);
-        }
-        return priceDelivery;
-    }
+
 
     public List<Product> getProductsOnCart() {
         return productsOnCart;
