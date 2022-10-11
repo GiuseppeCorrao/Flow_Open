@@ -16,6 +16,7 @@ class ProductTest {
         Product product = new Product(Brand.APPLE, "4x4", 135.00, "è un pc molto veloce, potente", "computer", 50, 5);
         List<Product> list= new ArrayList<>();
 
+        product.addProductOnDB(product);
         product.takeTheProducts(list);
 
         Assertions.assertFalse(list.isEmpty());
