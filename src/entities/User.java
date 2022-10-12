@@ -1,7 +1,12 @@
 package entities;
 
-import java.time.LocalDate;
+
+import java.sql.*;
+import java.util.List;
+
+
 import java.util.Date;
+
 
 public class User {
 
@@ -29,12 +34,48 @@ public class User {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return nameUser + "\n" + surnameUser + "\n" + age + "\n" + birthday + "\n" + gender + "\n" + email + "\n" + password;
+
+    public User() {
     }
 
+
+    public List<User> takeUserFromDB(List<User> listOfUserFromDB) {
+
+        Connection conn;
+
+        try {
+
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/flowopenDev", "developer", "developer");
+
+            Statement statement = conn.createStatement();
+
+            ResultSet pointer = statement.executeQuery("SELECT * FROM User");
+
+            while (pointer.next()) {
+                nameUser = pointer.getString("User_name");
+                surnameUser = pointer.getString("User_surname");
+                age = pointer.getInt("User_age");
+                birthday = pointer.getDate("User_birthday");
+                gender = pointer.getString("User_gender");
+                email = pointer.getString("User_email");
+                password = pointer.getString("User_password");
+
+                listOfUserFromDB.add(new User(nameUser, surnameUser, age, birthday, gender, email, password));
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return listOfUserFromDB;
+    }
+
+    public String getNameUser() {
+        return nameUser;
+    }
+
+    @Override
+    public String toString() {
+        return nameUser + '\'' + surnameUser + '\'' + age + birthday + gender + '\'' + email + '\'' +password + '\'';
+
+    }
 }
-
-
-
