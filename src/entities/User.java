@@ -1,11 +1,7 @@
 package entities;
 
-
 import java.sql.*;
 import java.util.List;
-
-
-import java.util.Date;
 
 
 public class User {
@@ -45,7 +41,7 @@ public class User {
 
         try {
 
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/flowopenDev", "developer", "developer");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/flowopendev", "root", "dante123");
 
             Statement statement = conn.createStatement();
 
@@ -68,6 +64,34 @@ public class User {
         }
         return listOfUserFromDB;
     }
+
+
+    public User insertUsersFromDB(User users) {
+        Connection connection;
+
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/flowopendev", "root", "dante123");
+
+            Statement statement = connection.createStatement();
+
+            PreparedStatement preparedStatement1 = connection.prepareStatement("INSERT INTO User (User_name,User_surname,User_age,User_birthday,User_gender,User_email,User_password) VALUES (?,?,?,?,?,?,?)");
+
+            preparedStatement1.setString(1, users.nameUser);
+            preparedStatement1.setString(2, users.surnameUser);
+            preparedStatement1.setInt(3, users.age);
+            preparedStatement1.setDate(4, users.birthday);
+            preparedStatement1.setString(5, users.gender);
+            preparedStatement1.setString(6, users.email);
+            preparedStatement1.setString(7, users.password);
+
+            preparedStatement1.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return users;
+    }
+
 
     public String getNameUser() {
         return nameUser;

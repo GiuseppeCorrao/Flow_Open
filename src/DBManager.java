@@ -24,7 +24,7 @@ public class DBManager {
 
         try{
 
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/flowopendev","developer","developer");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/flowopendev","root","dante123");
 
             Statement statement = connection.createStatement();
 

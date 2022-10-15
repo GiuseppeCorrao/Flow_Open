@@ -3,6 +3,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +32,18 @@ public class UserTest extends User {
 
         Assertions.assertNotEquals("Mimmo", list.get(0).getNameUser());
 
+    }
+
+    @Test
+    public void insertUsersFromDBTest(){
+        User user= new User("Marco", "Rossi", 18, Date.valueOf("2004-11-02"), "Male", "marcorossi@gmail.com", "marcorossi");
+        List<User> userList= new ArrayList<>();
+
+        insertUsersFromDB(user);
+        takeUserFromDB(userList);
+
+        Assertions.assertTrue(userList.contains(user));
+        System.out.println(userList);
     }
 }
 
