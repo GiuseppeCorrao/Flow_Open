@@ -41,7 +41,7 @@ public class User {
 
         try {
 
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/flowopendev", "root", "dante123");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/flowopenDev", "developer", "developer");
 
             Statement statement = conn.createStatement();
 
@@ -66,11 +66,11 @@ public class User {
     }
 
 
-    public User insertUsersFromDB(User users) {
+    public User insertUsersToDB(User users) {
         Connection connection;
 
         try {
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/flowopendev", "root", "dante123");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/flowopenDev", "developer", "developer");
 
             Statement statement = connection.createStatement();
 

@@ -7,6 +7,7 @@ import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class UserTest extends User {
 
@@ -35,15 +36,13 @@ public class UserTest extends User {
     }
 
     @Test
-    public void insertUsersFromDBTest(){
-        User user= new User("Marco", "Rossi", 18, Date.valueOf("2004-11-02"), "Male", "marcorossi@gmail.com", "marcorossi");
-        List<User> userList= new ArrayList<>();
+    public void insertUsersToDBTest(){
+        User user= new User("Maria", "Blu", 20, Date.valueOf("2002-1-04"), "Female", "mariablu@gmail.com", "mariablu");
+        User user2= new User("Franco", "Marrone", 19, Date.valueOf("2003-1-27"), "Male", "francomarrone@gmail.com", "francomarrone");
 
-        insertUsersFromDB(user);
-        takeUserFromDB(userList);
+        User userNew= insertUsersToDB(user);
 
-        Assertions.assertTrue(userList.contains(user));
-        System.out.println(userList);
+        Assertions.assertNotEquals(user2, userNew);
     }
 }
 

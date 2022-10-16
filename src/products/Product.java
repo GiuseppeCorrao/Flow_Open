@@ -51,7 +51,7 @@ public class Product {
 
 
         try {
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/flowopendev", "root", "dante123");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/flowopenDev", "developer", "developer");
 
             Statement state = connection.createStatement();
 
@@ -130,7 +130,7 @@ public class Product {
         try {
             Connection connection;
 
-            connection= DriverManager.getConnection("jdbc:mysql://localhost:3306/flowopendev", "root", "dante123");
+            connection= DriverManager.getConnection("jdbc:mysql://localhost:3306/flowopenDev", "developer", "developer");
 
             Statement statement= connection.createStatement();
 
