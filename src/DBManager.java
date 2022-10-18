@@ -33,12 +33,13 @@ public class DBManager {
             statement.execute("CREATE TABLE IF NOT EXISTS Product (\n" +
                     "product_id INTEGER(100) NOT NULL AUTO_INCREMENT,\n" +
                     "product_name VARCHAR(30),\n" +
-                    "product_price FLOAT,\n" +
+                    "product_price DOUBLE,\n" +
                     "product_color CHAR(30),\n" +
                     "product_description VARCHAR(255),\n" +
                     "product_quantity INTEGER(100),\n" +
                     "product_brand VARCHAR(20) NOT NULL CHECK (product_brand IN('ACER','HP','ASUS','PANASONIC','LENOVO','SAMSUNG','APPLE','XIAOMI','REDMI','RAZER','LG','HUAWEI','NOKIA','SONY','MICROSOFT')),\n" +
                     "PRIMARY KEY (product_id)\n" +
+                    "product_priceDelivery DOUBLE \n" +
                     ");");
 
             statement.execute("CREATE TABLE IF NOT EXISTS User (\n" +
